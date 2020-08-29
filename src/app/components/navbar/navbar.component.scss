@@ -1,0 +1,23 @@
+@import "../../../styles.scss";
+
+header {
+    display: grid;
+    grid-template-columns: minmax(40px, auto) 1fr minmax(40px, auto);
+    align-items: center;
+    justify-items: center;
+    padding: 1rem;
+    border-bottom: $border-regular;
+
+    div.logo {
+        grid-column: 2/3;
+       @include font-bold(big);
+    }
+
+    button:first-child {
+        grid-column: 1/2;
+    }
+
+    button:last-child {
+        grid-column: 3/4
+    }
+}

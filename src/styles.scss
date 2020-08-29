@@ -1,1 +1,111 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Global Color Scheme */
+$primary-blue: rgb(0, 88, 219);
+
+$background-white: white;
+
+$fontSizes: (
+  small: 1.2rem,
+  // 12px
+  regular: 1.6rem,
+  // 16px
+  big: 2rem // 20px,
+);
+
+@mixin font($size, $fontWeight: normal, $fontStyle: normal) {
+  @if map-has-key($map: $fontSizes, $key: $size) {
+    font-size: map-get($map: $fontSizes, $key: $size);
+    font-style: $fontStyle;
+    font-weight: $fontWeight;
+  } @else {
+    font-size: map-get($map: $fontSizes, $key: regular);
+    font-style: $fontStyle;
+    font-weight: $fontWeight;
+  }
+}
+
+@mixin font-italic($size) {
+  @include font($size, normal, italic);
+}
+
+@mixin font-bold($size) {
+  @include font($size, bold);
+}
+
+/* Borders */
+$border-light: 1px solid rgba(128, 128, 128, 0.301);
+$border-regular: 1px solid;
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; // 1rem = 10px by default
+  background-color: rgba(128, 128, 128, 0.301);
+}
+
+body,
+html {
+  width: 400px;
+  max-width: 400px;
+  height: 600px;
+  max-height: 600px;
+  font-family: "Pt_Sans";
+}
+
+body {
+  display: block;
+  background-color: white;
+  @include font(regular);
+}
+
+i.icon {
+  display: inline-block;
+
+  &.dark {
+    color: rgb(32, 32, 32);
+  }
+
+  &.xs {
+    @include font(small);
+  }
+
+  &.md {
+    @include font(regular);
+  }
+
+  &.xl {
+    @include font(big);
+  }
+}
+
+/* Button styles */
+button {
+  padding: 1rem 1.5rem;
+  @include font-bold(regular);
+  border: none;
+  outline: none;
+
+  &.icon-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.8rem;
+    border-radius: 100%;
+    background-color: transparent;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: rgba(190, 189, 189, 0.3);
+    }
+
+    &.xs {
+      height: 24px;
+      width: 24px;
+      font-size: 1.6rem;
+    }
+  }
+}

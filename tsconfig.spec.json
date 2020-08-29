@@ -2,13 +2,13 @@
 {
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
+    "esModuleInterop": true,
     "outDir": "./out-tsc/spec",
     "types": [
       "jasmine"
     ]
   },
   "files": [
-    "src/test.ts",
     "src/polyfills.ts"
   ],
   "include": [

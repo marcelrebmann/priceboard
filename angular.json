@@ -3,11 +3,12 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "price-tracker": {
+    "priceboard": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss"
+          "style": "scss",
+          "lintFix": true
         }
       },
       "root": "",
@@ -17,7 +18,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/price-tracker",
+            "outputPath": "dist/priceboard",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -28,7 +29,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/assets/webfonts.css"
             ],
             "scripts": []
           },
@@ -66,18 +68,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "price-tracker:build"
+            "browserTarget": "priceboard:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "price-tracker:build:production"
+              "browserTarget": "priceboard:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "price-tracker:build"
+            "browserTarget": "priceboard:build"
           }
         },
         "test": {
@@ -92,7 +94,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/assets/webfonts.css"
             ],
             "scripts": []
           }
@@ -114,15 +117,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "price-tracker:serve"
+            "devServerTarget": "priceboard:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "price-tracker:serve:production"
+              "devServerTarget": "priceboard:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "price-tracker"
+  "defaultProject": "priceboard"
 }
