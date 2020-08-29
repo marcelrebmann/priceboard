@@ -1,0 +1,6 @@
+<nav>
+    <div *ngFor="let tab of tabs" class="tab" [routerLink]="tab.route" routerLinkActive="active">
+        <i-feather [name]="tab.iconName" class="icon sm"></i-feather>
+        <!-- <span>{{tab.title}}</span> -->
+    </div>
+</nav>

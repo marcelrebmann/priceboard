@@ -1,9 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
 
 /* Global Color Scheme */
-$primary-blue: rgb(0, 88, 219);
+$blue: #275efe;
+$blue-darker: #184fee;
 
-$background-white: white;
+$dark: #242836;
+$dark-darker: #1C212E;
+
+$background: #E4ECFA;
+$background-dark: #28485a;
+$white: #fff;
+$text-light: #efefef;
+
+$accent-green: #4BC793;
+$accent-red: #c74b4b;
+
+$light-grey: #ababab;
 
 $fontSizes: (
   small: 1.2rem,
@@ -59,10 +71,11 @@ html {
 body {
   display: block;
   background-color: white;
+  position: relative;
   @include font(regular);
 }
 
-i.icon {
+i.icon, i-feather.icon {
   display: inline-block;
 
   &.dark {
@@ -71,14 +84,32 @@ i.icon {
 
   &.xs {
     @include font(small);
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+
+  &.sm {
+    @include font(small);
+    width: 2rem;
+    height: 2rem;
   }
 
   &.md {
     @include font(regular);
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+
+  &.ml {
+    @include font(regular);
+    width: 3rem;
+    height: 3rem;
   }
 
   &.xl {
     @include font(big);
+    width: 3.2rem;
+    height: 3.2rem;
   }
 }
 

@@ -1,0 +1,37 @@
+@import "../../../styles.scss";
+
+:host {
+    width: 100%;
+}
+
+nav {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    place-items: center;
+
+    div.tab {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0.3rem 1rem;
+        cursor: pointer;
+        outline: none;
+        margin-bottom: 3px;
+
+        &:hover {
+            margin-bottom: 2px;
+            border-bottom: 1px inset $background;
+        }
+
+        span {
+            @include font(small);
+        }
+
+        &.active {
+            margin-bottom: 0;
+            border-bottom: 3px inset $accent-green;
+        }
+    }
+}

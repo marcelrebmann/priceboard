@@ -1,9 +1,10 @@
 <header>
+  <app-tabs-navigation [tabs]="tabs"></app-tabs-navigation>
   <button *ngIf="isNavigateBackEnabled"
   class="icon-button md">
     <i-feather name="arrow-left" class="icon md"></i-feather>
   </button>
-  <div class="logo">{{title}}</div>
+  <div class="page-title">{{title$ | async}}</div>
   <button class="icon-button">
     <i-feather name="settings" class="icon md"></i-feather>
   </button>

@@ -1,4 +1,25 @@
-export class TrackedItem {
+import { CurrencyPipe } from '@angular/common';
+
+export enum Currency {
+    EUR = "EUR",
+    USD = "USD"
+}
+
+export interface TrackedArticle {
+    readonly id: string;
+    readonly name: string;
+    readonly initialPrice: number;
+    readonly currentPrice: number;
+    readonly trendPrice: number;
+    readonly lastCheckedTimestamp: number;
+    readonly url: string;
+    readonly domain: string;
+    readonly created: number;
+    readonly currency: Currency;
+}
+
+// TODO: Needed later for BE
+class TrackedItem {
 
     private _name: string;
     private _initialPrice: number;

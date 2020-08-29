@@ -3,13 +3,23 @@
 header {
     display: grid;
     grid-template-columns: minmax(40px, auto) 1fr minmax(40px, auto);
+    grid-template-rows: auto auto;
     align-items: center;
     justify-items: center;
     padding: 1rem;
     border-bottom: $border-regular;
+    row-gap: 1rem;
+    background-color: $background-dark;
+    color: $text-light;
 
-    div.logo {
+    app-tabs-navigation {
+        grid-row: 1;
+        grid-column: 1/4;
+    }
+
+    div.page-title {
         grid-column: 2/3;
+        place-self: center start;
        @include font-bold(big);
     }
 

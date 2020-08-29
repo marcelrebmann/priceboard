@@ -1,1 +1,22 @@
-<p>item-card works!</p>
+<section>
+    <div class="item-info">
+        <i-feather class="icon md trend-indicator"
+            [name]="isItemLessExpensive ? 'arrow-down' : 'arrow-up'"
+            [class.less-expensive]="isItemLessExpensive"
+        ></i-feather>
+        <h3>{{ item.name }}</h3>
+        <div class="item-details">
+            <i-feather name="tag" class="icon xs"></i-feather>
+            <span>{{ item.initialPrice | currency }}</span>
+            <i-feather name="globe" class="icon xs"></i-feather>
+            <span>{{ item.domain }}</span>
+        </div>
+    </div>
+    <div class="item-price">
+        <h3 [class.less-expensive]="isItemLessExpensive">{{ item.currentPrice | currency }}</h3>
+        <div>
+            <i-feather name="refresh-cw" class="icon xs"></i-feather>
+            <span>{{calculateLastChecked(item.created, item.lastCheckedTimestamp)}}</span>
+        </div>
+    </div>
+</section>
